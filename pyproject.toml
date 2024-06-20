@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "chattts-timbre"
+version = "0.1.0"
+description = ""
+authors = ["tenado <690784374@qq.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+librosa = "^0.10.2.post1"
+pandas = "^2.2.2"
+numpy = "1.26.4"
+torch = "2.1.2"
+waitress = "^3.0.0"
+python-dotenv = "^1.0.1"
+flask = "^3.0.3"
+livereload = "^2.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

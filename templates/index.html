@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{name}} - v{{version}}</title>
+    <link href="/static/style/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/style/index.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container my-4 px-0">
+      <div
+        id="loading-spinner"
+        class="d-flex justify-content-center align-items-center"
+        style="display: none !important"
+      >
+        <div class="spinner-border text-light" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <div class="text-center">
+        <h1>{{name}}<span class="fs-6">(v{{version}})</span></h1>
+      </div>
+      <div class="row justify-content-center">
+        <!-- 上传音频 -->
+        <div class="col-12 my-4">
+          <input
+            type="file"
+            id="audio-file"
+            class="form-control"
+            accept="audio/*"
+            onclick="uploadTimbre()"
+          />
+        </div>
+        <div class="col-12 my-4">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="csv"
+              checked
+            />
+            <label class="form-check-label" for="inlineRadio2"
+              >生成csv格式</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="pt"
+            />
+            <label class="form-check-label" for="inlineRadio1"
+              >生成pt格式</label
+            >
+          </div>
+        </div>
+        <div class="col-12 my-4" id="timbre-url"></div>
+        <!-- 按钮 -->
+        <div class="col-12 my-4">
+          <button
+            id="submit-btn"
+            class="btn btn-primary"
+            onclick="generateTimbre()"
+          >
+            生成音色
+          </button>
+          <button
+            id="download-btn"
+            class="btn btn-success"
+            onclick="downloadTimbre()"
+          >
+            下载音色
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/layer/layer.js"></script>
+  <script src="/static/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/index.js"></script>
+</html>

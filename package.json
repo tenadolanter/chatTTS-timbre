@@ -1,0 +1,18 @@
+{
+  "name": "chattts-timbre",
+  "version": "1.0.0",
+  "description": "根据声音生成音色文件",
+  "scripts": {
+    "start": "sh start.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tenadolanter/chatTTS-timbre.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tenadolanter/chatTTS-timbre/issues"
+  },
+  "homepage": "https://github.com/tenadolanter/chatTTS-timbre#readme"
+}
