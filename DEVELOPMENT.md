@@ -6,7 +6,6 @@
 | ------------- | ------------ |
 | logging       | 日志         |
 | python-dotenv | 获取环境变量 |
-| logging       | 日志         |
 
 2、pyproject.toml
 
