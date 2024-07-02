@@ -15,3 +15,9 @@
 4、安装依赖 `poetry install`
 
 5、启动项目 `python app.py`
+
+# 参考项目
+
+[ChatTTS](https://github.com/2noise/chattts)
+
+[ChatTTS-ui](https://github.com/jianchang512/ChatTTS-ui)

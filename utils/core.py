@@ -38,7 +38,7 @@ class Utils:
     @staticmethod
     def generate_timbre(audio_path, type="csv"):
         try:
-            # 加载音频文件
+            # 加载音频文件，sr=None表示自动识别采样率，例如值为44100表示CD音质
             y, sr = librosa.load(audio_path, sr=None)
             # 提取音色特征
             chroma_stft = librosa.feature.chroma_stft(y=y, sr=sr)  # Chroma STFT 特征
@@ -73,6 +73,14 @@ class Utils:
             for i in range(1, 14):
                 features[f"mfcc{i}_mean"] = np.mean(mfcc[i - 1])
                 features[f"mfcc{i}_std"] = np.std(mfcc[i - 1])
+
+            # 添加更多特征和统计量
+            zero_crossing_rate = librosa.feature.zero_crossing_rate(y)
+            rmse = librosa.feature.rms(y=y)
+            features["zero_crossing_rate_mean"] = np.mean(zero_crossing_rate)
+            features["zero_crossing_rate_std"] = np.std(zero_crossing_rate)
+            features["rmse_mean"] = np.mean(rmse)
+            features["rmse_std"] = np.std(rmse)
             # 创建 DataFrame
             config = [features]
             filename = datetime.datetime.now().strftime("%Y%m%d%H%M")
