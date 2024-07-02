@@ -16,7 +16,7 @@ class Utils:
             df = pd.DataFrame(config)
             if type == "csv":
                 csv_file = f"{TIMBRE_DIR}/{name}.csv"
-                df.to_csv(csv_file, index=False, header=False)
+                df.to_csv(csv_file, index=False, header=False, float_format="%.16f")
                 print(f"音色特征已保存到 {csv_file}")
                 return csv_file
             elif type == "pt":
